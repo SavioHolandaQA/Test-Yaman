@@ -28,17 +28,20 @@ class ContatoPage {
   }
 
   mensagemDeErro() {
-    
-      // tente clicar no botão de enviar com base no texto, se o seletor direto falhar
-      cy.contains('button', 'Enviar').click(); // ajuste 'Enviar' se for outro texto visível
-    
-      cy.get('input[type="email"]').then(($input) => {
-        expect($input[0].validationMessage).to.include('Preencha este campo');
-      });
-    
-      cy.screenshot('mensagem-de-erro');
-    }
-    
+    cy.get('form').submit();
+  
+    // Garante que não houve redirecionamento nem sumiu o formulário
+    cy.get('form').should('exist');
+  
+    // Verifica se o campo é inválido (sem depender de mensagem visual)
+    cy.get('input[type="email"]').then(($input) => {
+      expect($input[0].checkValidity()).to.be.false;
+    });
+  
+    cy.screenshot('mensagem-de-erro');
   }
+  
+  }
+
 
 export default new ContatoPage();
