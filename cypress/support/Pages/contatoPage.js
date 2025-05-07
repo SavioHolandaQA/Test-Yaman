@@ -19,6 +19,7 @@ class ContatoPage {
     cy.contains('button', 'Enviar').click();
   }
 
+  
   mensagemDeSucesso() {
     cy.get('.colored-chaletgreen > b')
       .should('be.visible')
