@@ -26,7 +26,9 @@ jobs:
         run: mkdir -p cypress/screenshots
 
       - name: Executar testes (Cypress)
-        run: npm test
+        run: |
+          export TERM=xterm
+          npm test
 
       - name: Listar arquivos de screenshots
         run: ls -R cypress/screenshots
