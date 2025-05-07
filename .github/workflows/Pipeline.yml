@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: End-to-end tests
 
 on: [push, pull_request]
 
@@ -10,15 +10,15 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v3
         with:
           node-version: 22
 
       - name: Instalar dependências
         run: npm ci
 
-      - name: Rodar testes do Cypress (npm test)
+      - name: Rodar testes do Cypress
         run: npm test
 
       - name: Salvar screenshots como artefato
@@ -26,3 +26,4 @@ jobs:
         with:
           name: screenshots-cypress
           path: cypress/screenshots
+
