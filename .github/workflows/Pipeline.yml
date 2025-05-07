@@ -25,10 +25,10 @@ jobs:
       - name: Verificar diretório de screenshots
         run: mkdir -p cypress/screenshots
 
-      - name: Executar testes (Cypress)
+      - name: Executar testes (Cypress - modo headless)
         run: |
           export TERM=xterm
-          npm test
+          npx cypress run
 
       - name: Listar arquivos de screenshots
         run: ls -R cypress/screenshots
