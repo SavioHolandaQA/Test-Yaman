@@ -17,7 +17,7 @@ describe('Acessando a tela de contato', () => {
 
   it('Validar mensagem de erro', () => {
     // Simula ausência do campo de e-mail
-    contatoPage.preencherCampos(name, '', subject, message);
+    contatoPage.preencherCampos(name,'', subject, message);
     contatoPage.clickEnviar();
     contatoPage.mensagemDeErro();
   });
