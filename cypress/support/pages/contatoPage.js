@@ -42,5 +42,4 @@ class ContatoPage {
   
   }
 
-
 export default new ContatoPage();

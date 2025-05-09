@@ -2,15 +2,16 @@
   "name": "site-yaman",
   "version": "1.0.0",
   "main": "index.js",
-"scripts": {
+  "scripts": {
     "cy:open": "cypress open",
     "test": "cypress run"
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "cypress": "^14.3.2"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }

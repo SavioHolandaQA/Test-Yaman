@@ -2,6 +2,7 @@
 
 import contatoPage from '../support/pages/contatoPage';
 const dados = require('../fixtures/dados.json');
+
 const { name, email, subject, message } = dados;
 
 describe('Acessando a tela de contato', () => {
