@@ -9,7 +9,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    
+
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
@@ -23,6 +23,7 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
+        
       - name: Verificar diretório de screenshots
         run: mkdir -p cypress/screenshots
 
